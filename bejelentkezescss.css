@@ -1,124 +1,73 @@
-/* Az alap stílusok */
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh;  /* Magasság 100%-ra */
-    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #ff6f61, #6a5acd, #00bcd4, #ffcc00); /* Színátmenet */
-    background-size: 400% 400%;  /* Nagyobb háttérméret a simább animációhoz */
-    animation: gradientAnimation 10s ease infinite; /* Animáció */
+    height: 100vh;
+    background: linear-gradient(135deg, #00bcd4, #00796b, #004d40, #01579b); /* Sötét türkiz, cián, világoskék átmenet */
 }
 
-/* Animáció a színátmenethez */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Form stílusok */
-.login-container {
-    background-color: rgba(0, 0, 0, 0.5); /* Átlátszó fekete háttér */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    max-width: 400px;  /* Maximális szélesség */
+    height: 100%;
 }
 
-/* Címek és űrlap stílusok */
-h1 {
-    color: #fff;
-    font-size: 2.5rem;
+.login-box {
+    background: rgba(255, 255, 255, 0.15); /* Áttetsző fehér háttér */
+    backdrop-filter: blur(10px); /* Homályos háttér */
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 180, 219, 0.5); /* Erősebb kék árnyék */
+    color: white; /* Fehér szöveg a kontraszt miatt */
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff; /* Fehér szöveg szín */
     margin-bottom: 20px;
 }
 
-input[type="email"], input[type="password"] {
+input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+    margin-bottom: 15px;
+    border: 1px solid #00bcd4; /* Kékes szegély */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #00796b; /* Zöldes-kékes szegély fókuszáláskor */
 }
 
 button {
     width: 100%;
-    padding: 12px;
-    background-color: #00bcd4;
-    color: white;
-    font-size: 1.2rem;
+    padding: 10px;
+    background-color: #00bcd4; /* Kék színű gomb */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0097a7;
+    background-color: #00796b; /* Gomb színének sötétítése hover-re */
 }
-
-p {
-    color: #fff;
-}
-
-a {
-    color: #00bcd4;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Karika animáció (spinner) */
-.spinner {
-    border: 8px solid #f3f3f3; /* Világos szürke háttér */
-    border-top: 8px solid #3498db; /* Kék szín a tetején */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite; /* Forgás animáció */
-    margin: 20px auto; /* A karika középre helyezése */
-}
-
-/* A karika forgás animációja */
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-/* Karika stílusok */
-.spinner {
-    position: absolute;
-    top: 22%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 30px;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #00bcd4;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-
-/* Az animáció a karikához */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
