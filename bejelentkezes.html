@@ -4,61 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bejelentkezés</title>
-    <link rel="stylesheet" href="bejelentkezescss.css"> <!-- Hivatkozás a CSS fájlra -->
+    <link rel="stylesheet" href="bejelentkezescss.css">
 </head>
 <body>
-
-    <div class="login-container">
-        <h1>Bejelentkezés</h1>
-        <form id="loginForm" onsubmit="return loginUser()">
-            <input type="email" id="loginEmail" placeholder="E-mail" required>
-            <input type="password" id="loginPassword" placeholder="Jelszó" required>
-            <button type="submit">Bejelentkezés</button>
-        </form>
-        <p>Még nincs fiókod? <a href="regisztracio.html">Regisztrálj itt!</a></p>
+    <div class="container">
+        <div class="login-box">
+            <h2>Bejelentkezés</h2>
+            <form>
+                <div class="input-box">
+                    <span class="icon">🔹</span>
+                    <input type="text" required placeholder="Felhasználónév">
+                </div>
+                <div class="input-box">
+                    <span class="icon">🔒</span>
+                    <input type="password" required placeholder="Jelszó">
+                </div>
+                <div class="options">
+                    <label><input type="checkbox"> Emlékezz rám</label>
+                </div>
+                <button type="submit" class="btn">Bejelentkezés</button>
+                <p>Még nincs fiókod? <a href="regisztracio.html">Regisztráció</a></p>
+            </form>
+        </div>
     </div>
-
-    <!-- Karika, ami a bejelentkezés után fog megjelenni -->
-    <div id="spinner" class="spinner" style="display: none;">
-        <!-- Spinner animáció -->
-        <div class="spinner-inner"></div>
-    </div>
-
-    <script>
-        function loginUser() {
-            const loginEmail = document.getElementById("loginEmail").value;
-            const loginPassword = document.getElementById("loginPassword").value;
-
-            // Ellenőrizzük, hogy regisztrált felhasználó van-e
-            if (localStorage.getItem("userRegistered") === "true") {
-                const storedEmail = localStorage.getItem("userEmail");
-                const storedPassword = localStorage.getItem("userPassword");
-
-                // Ha az e-mail és a jelszó egyezik, bejelentkeztetjük
-                if (loginEmail === storedEmail && loginPassword === storedPassword) {
-                    // Karika megjelenítése
-                    document.getElementById("spinner").style.display = "block";
-
-                    // 5 másodperc múlva átirányítjuk a főoldalra
-                    setTimeout(function() {
-                        alert("Sikeres bejelentkezés!");
-                        window.location.href = "fooldal.html";  // A főoldalra irányítjuk
-                    }, 5000); // 5000 ms = 5 másodperc
-
-                    return false; // Megakadályozzuk a form elküldését
-                } else {
-                    alert("Hibás e-mail vagy jelszó!");
-                    return false; // Megakadályozzuk a form elküldését
-                }
-            } else {
-                alert("Nincs regisztrált fiókod! Kérlek regisztrálj.");
-                return false; // Megakadályozzuk a form elküldését
-            }
-        }
-    </script>
-
 </body>
 </html>
-
-
 
