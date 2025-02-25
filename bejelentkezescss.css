@@ -1,120 +1,73 @@
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bejelentkezés</title>
-    <link rel="stylesheet" href="bejelentkezescss.css">
-    <style>
-        /* Példa egy egyszerű CSS-re, ha a bejelentkezési formázás nem külön fájlban van */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .login-box {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #00bcd4, #00796b, #004d40, #01579b); /* Sötét türkiz, cián, világoskék átmenet */
+}
 
-        .login-box h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
 
-        .input-box {
-            margin-bottom: 20px;
-            position: relative;
-        }
+.login-box {
+    background: rgba(255, 255, 255, 0.15); /* Áttetsző fehér háttér */
+    backdrop-filter: blur(10px); /* Homályos háttér */
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 180, 219, 0.5); /* Erősebb kék árnyék */
+    color: white; /* Fehér szöveg a kontraszt miatt */
+}
 
-        .input-box input {
-            width: 100%;
-            padding: 10px;
-            padding-left: 35px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff; /* Fehér szöveg szín */
+    margin-bottom: 20px;
+}
 
-        .input-box .icon {
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            font-size: 18px;
-        }
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #00bcd4; /* Kékes szegély */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 16px;
+    outline: none;
+}
 
-        .options {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
+input:focus {
+    border-color: #00796b; /* Zöldes-kékes szegély fókuszáláskor */
+}
 
-        .btn {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-        }
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00bcd4; /* Kék színű gomb */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
 
-        .btn:hover {
-            background-color: #45a049;
-        }
-
-        p {
-            text-align: center;
-        }
-
-        p a {
-            color: #4CAF50;
-            text-decoration: none;
-        }
-
-        p a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="login-box">
-            <h2>Bejelentkezés</h2>
-            <form>
-                <div class="input-box">
-                    <span class="icon">🔹</span>
-                    <input type="text" required placeholder="Felhasználónév">
-                </div>
-                <div class="input-box">
-                    <span class="icon">🔒</span>
-                    <input type="password" required placeholder="Jelszó">
-                </div>
-                <div class="options">
-                    <label><input type="checkbox"> Nincs fiókod?</label>
-                </div>
-                <button type="submit" class="btn">Bejelentkezés</button>
-                <p>Még nincs fiókod? <a href="regisztracio.html">Regisztráció</a></p>
-            </form>
-        </div>
-    </div>
-</body>
-</html>
+button:hover {
+    background-color: #00796b; /* Gomb színének sötétítése hover-re */
+}
